@@ -15,7 +15,7 @@ export default class Game {
 
   render() {
     //empty out game element before re-rendering
-    this.gameElement.innerHTML = ''
+    this.gameElement.innerHTML = '';
 
     let svg = document.createElementNS(SVG_NS, 'svg');
     svg.setAttributeNS(null, 'width', this.width);
@@ -24,5 +24,8 @@ export default class Game {
     svg.setAttributeNS(null, 'version', '1.1');
 
     this.gameElement.appendChild(svg);
+
+    //rendering all game elements inside the SVG
+    this.board.render(svg);
   }
 }
