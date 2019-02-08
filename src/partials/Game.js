@@ -45,10 +45,20 @@ export default class Game {
       this.height
     )
 
-
+    document.addEventListener('keydown', event => {
+      if (event.key === KEYS.spaceBar) {
+        this.pause = !this.pause;
+      }
+    })
   }
 
   render() {
+    //pause game 
+
+    if (this.pause) {
+      return;
+    }
+
     //empty out game element before re-rendering
     this.gameElement.innerHTML = '';
 
