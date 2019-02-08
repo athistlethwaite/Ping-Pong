@@ -1,6 +1,4 @@
-import {
-  SVG_NS
-} from '../settings';
+import { SVG_NS } from "../settings";
 
 export default class Ball {
   constructor(radius, boardWidth, boardHeight) {
@@ -9,9 +7,8 @@ export default class Ball {
     this.boardHeight = boardHeight;
     this.direction = 1;
 
-    //set x and y coordinates at the center 
+    //set x and y coordinates at the center
     this.reset();
-
   }
 
   reset() {
@@ -22,10 +19,9 @@ export default class Ball {
     this.vy = 0;
     while (this.vy === 0) {
       this.vy = Math.floor(Math.random() * 10 - 5);
-      // setting a number between -5 and 5, based on the vy 
+      // setting a number between -5 and 5, based on the vy
     }
     this.vx = this.direction * (6 - Math.abs(this.vy));
-
   }
 
   wallCollision() {
@@ -43,15 +39,15 @@ export default class Ball {
 
   paddleCollision(player1, player2) {
     if (this.vx > 0) {
-      //detect player 2 collision 
+      //detect player 2 collision
 
-      let paddle = player2.coordinates(player2.x, player2.y, player2.width, player2.height)
-      let {
-        leftX,
-        rightX,
-        topY,
-        bottomY
-      } = paddle;
+      let paddle = player2.coordinates(
+        player2.x,
+        player2.y,
+        player2.width,
+        player2.height
+      );
+      let { leftX, topY, bottomY } = paddle;
 
       if (
         this.x + this.radius >= leftX &&
@@ -60,15 +56,14 @@ export default class Ball {
       ) {
         this.vx = -this.vx;
       }
-
     } else {
-      let paddle = player1.coordinates(player1.x, player1.y, player1.width, player1.height)
-      let {
-        leftX,
-        rightX,
-        topY,
-        bottomY
-      } = paddle;
+      let paddle = player1.coordinates(
+        player1.x,
+        player1.y,
+        player1.width,
+        player1.height
+      );
+      let { rightX, topY, bottomY } = paddle;
 
       if (
         this.x - this.radius <= rightX &&
@@ -80,6 +75,11 @@ export default class Ball {
     }
   }
 
+  goal(player) {
+    player.score++; // increment the player score by 1
+    this.reset(); // reset the ball in the middle
+  }
+
   render(svg, player1, player2) {
     this.x += this.vx;
     this.y += this.vy;
@@ -87,15 +87,14 @@ export default class Ball {
     this.wallCollision();
     this.paddleCollision(player1, player2);
 
-    let circle = document.createElementNS(SVG_NS, 'circle');
-    //setting all the circle attributes for the paddle  
-    circle.setAttributeNS(null, 'r', this.radius);
-    circle.setAttributeNS(null, 'cx', this.x); //x of the centre point 
-    circle.setAttributeNS(null, 'cy', this.y); //y of the centre point 
-    circle.setAttributeNS(null, 'fill', 'white');
+    let circle = document.createElementNS(SVG_NS, "circle");
+    //setting all the circle attributes for the paddle
+    circle.setAttributeNS(null, "r", this.radius);
+    circle.setAttributeNS(null, "cx", this.x); //x of the centre point
+    circle.setAttributeNS(null, "cy", this.y); //y of the centre point
+    circle.setAttributeNS(null, "fill", "white");
 
     //append to the parent SVG
     svg.appendChild(circle);
-
   }
 }
