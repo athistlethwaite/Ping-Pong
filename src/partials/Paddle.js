@@ -1,4 +1,6 @@
-import { SVG_NS } from "../settings";
+import {
+  SVG_NS
+} from '../settings';
 
 export default class Paddle {
   constructor(boardHeight, width, height, x, y, upKey, downKey) {
@@ -9,8 +11,9 @@ export default class Paddle {
     this.y = y;
     this.speed = 40;
     this.score = 0;
+    this.firstKeyPress = false;
 
-    document.addEventListener("keydown", event => {
+    document.addEventListener('keydown', event => {
       switch (event.key) {
         case upKey:
           this.up();
@@ -44,15 +47,15 @@ export default class Paddle {
   }
 
   render(svg) {
-    let rect = document.createElementNS(SVG_NS, "rect");
-    //setting all the rect attributes for the paddle
-    rect.setAttributeNS(null, "width", this.width);
-    rect.setAttributeNS(null, "height", this.height);
-    rect.setAttributeNS(null, "x", this.x); // x of the top left corner
-    rect.setAttributeNS(null, "y", this.y); //
-    rect.setAttributeNS(null, "fill", "white");
+    let rect = document.createElementNS(SVG_NS, 'rect');
+    // Setting all the rect attributes for the paddle:
+    rect.setAttributeNS(null, 'width', this.width);
+    rect.setAttributeNS(null, 'height', this.height);
+    rect.setAttributeNS(null, 'x', this.x); // x of the top left corner
+    rect.setAttributeNS(null, 'y', this.y); //
+    rect.setAttributeNS(null, 'fill', 'white');
 
-    //append to the parent SVG
+    // Append to the parent SVG:
     svg.appendChild(rect);
   }
 }
