@@ -6,12 +6,8 @@ import Board from './Board';
 import Paddle from './Paddle';
 import Ball from './Ball';
 import Score from './Score';
+import Message from './Message';
 
-function startGame() {
-  startButton.destroy();
-  ball.body.velocity.set(150, -150);
-  playing = true;
-}
 export default class Game {
   constructor(element, width, height) {
     this.width = width;
@@ -32,7 +28,9 @@ export default class Game {
       this.boardGap,
       (this.height - this.paddleHeight) / 2, //this sets the y
       KEYS.a,
-      KEYS.z
+      KEYS.z,
+      KEYS.r,
+
     );
     this.player2 = new Paddle(
       this.height,
@@ -41,7 +39,7 @@ export default class Game {
       this.width - (this.paddleWidth + this.boardGap),
       (this.height - this.paddleHeight) / 2,
       KEYS.up,
-      KEYS.down
+      KEYS.down,
     );
 
     this.radiusBall = 8;
@@ -51,17 +49,14 @@ export default class Game {
 
     this.score1 = new Score(this.width / 2 - 50, 30, 30);
     this.score2 = new Score(this.width / 2 + 25, 30, 30);
+    this.winner = new Message(85, 140, 40);
 
     document.addEventListener('keydown', event => {
       if (event.key === KEYS.spaceBar) {
         this.pause = !this.pause;
       }
-    });
-  }
 
-  gameWinner(svg, player) {
-    this.score.render(svg, `${player} Wins!`);
-    this.pause = true;
+    });
   }
 
   render() {
@@ -92,11 +87,17 @@ export default class Game {
     this.score1.render(svg, this.player1.score);
     this.score2.render(svg, this.player2.score);
 
-    if (this.player1.score === 10) {
-      this.score(svg, 'Player 1')
-    } else if (this.player2.score === 10) {
-      this.score(svg, 'Player 2')
-    }
+    const player1Message = "Player 1 Wins!";
+    const player2Message = "Player 2 Wins!";
 
+    if (this.player1.score === 2) {
+      this.winner.render(svg, player1Message);
+      this.reset();
+
+
+    } else if (this.player2.score === 2) {
+      this.winner.render(svg, player2Message);
+      this.reset();
+    }
   }
 }

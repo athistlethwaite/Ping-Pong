@@ -172,11 +172,8 @@ h1 {
   text-align: center;
 }
 
-.gameWinner {
+p {
   display: flex;
   justify-content: space-around;
-}
 
-.button {
-  display: flex;
 }
