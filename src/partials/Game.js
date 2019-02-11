@@ -49,6 +49,7 @@ export default class Game {
 
     this.score1 = new Score(this.width / 2 - 50, 30, 30);
     this.score2 = new Score(this.width / 2 + 25, 30, 30);
+
     this.winner = new Message(85, 140, 40);
 
     document.addEventListener('keydown', event => {
@@ -60,8 +61,6 @@ export default class Game {
   }
 
   render() {
-    // Start game: 
-
     // Pause game:
     if (this.pause) {
       return;
@@ -90,12 +89,11 @@ export default class Game {
     const player1Message = "Player 1 Wins!";
     const player2Message = "Player 2 Wins!";
 
-    if (this.player1.score === 2) {
+    if (this.player1.score === 12) {
       this.winner.render(svg, player1Message);
       this.reset();
 
-
-    } else if (this.player2.score === 2) {
+    } else if (this.player2.score === 12) {
       this.winner.render(svg, player2Message);
       this.reset();
     }

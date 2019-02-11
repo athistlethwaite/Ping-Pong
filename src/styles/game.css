@@ -157,9 +157,14 @@ html {
   font-size: 16px;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   align-items: center;
   display: flex;
+  flex-direction: column;
   font-family: 'Silkscreen Web', monotype;
   height: 100vh;
   justify-content: center;
@@ -172,8 +177,22 @@ h1 {
   text-align: center;
 }
 
-p {
+h2 {
+  text-align: center;
+  color: #9E91C8;
+  padding-top: 20px;
+  font-size: 25px;
+}
+
+.instructions {
+  text-align: center;
+}
+
+ul {
   display: flex;
   justify-content: space-around;
+}
 
+p {
+  padding: 0.75em;
 }

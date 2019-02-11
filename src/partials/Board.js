@@ -14,7 +14,7 @@ export default class Board {
     // Setting all the rect attributes:
     rect.setAttributeNS(null, 'width', this.width);
     rect.setAttributeNS(null, 'height', this.height);
-    rect.setAttributeNS(null, 'fill', '#353535');
+    rect.setAttributeNS(null, 'fill', '#E3DEF0');
 
     let line = document.createElementNS(SVG_NS, 'line');
 

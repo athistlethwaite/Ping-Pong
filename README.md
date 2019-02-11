@@ -1,8 +1,8 @@
-# Pong Game
+## Pong Game
 
-A basic pong game using SVGs.
+This project is a basic pong game which taught me how to build SVGs from scratch, and how to implement ES2015 classes.
 
-## Setup
+# Setup
 
 **Install dependencies:**
 
@@ -16,12 +16,6 @@ A basic pong game using SVGs.
 
 `> npm run build`
 
-## Keys
+# Takeaways
 
-**Player 1:**
-* a: up
-* z: down
-
-**Player 2:**
-* ▲ : up
-* ▼: down
+Through 14 Challenges during the code along, I have a better understanding of ES2015 syntactical features, SVGs and Webpack to build a Pong Game. To provide a deeper understanding of the code, I believe three days would have been more beneficial. When it came to the stretch goals, I had a really hard time implementing something on my own. I successfully added in the winner, and two balls, but wish I was able to understand how to add other features.

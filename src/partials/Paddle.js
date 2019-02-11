@@ -9,7 +9,7 @@ export default class Paddle {
     this.height = height;
     this.x = x;
     this.y = y;
-    this.speed = 40;
+    this.speed = 50;
     this.score = 0;
     this.firstKeyPress = false;
 
