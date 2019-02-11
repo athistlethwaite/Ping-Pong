@@ -136,7 +136,6 @@ export default class Ball {
     } else if (leftGoal) {
       this.goal(player2);
       this.direction = -1;
-
     }
   }
 }
