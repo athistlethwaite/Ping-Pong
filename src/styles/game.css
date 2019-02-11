@@ -125,7 +125,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: '';
+  content: "";
   content: none;
 }
 
@@ -139,12 +139,13 @@ table {
  */
 
 @font-face {
-  font-family: 'Silkscreen Web';
-  src: url('../../public/fonts/slkscr-webfont.eot');
-  src: url('../../public/fonts/slkscr-webfont.eot?#iefix') format('embedded-opentype'),
-    url('../../public/fonts/slkscr-webfont.woff') format('woff'),
-    url('../../public/fonts/slkscr-webfont.ttf') format('truetype'),
-    url('../../public/fonts/slkscr-webfont.svg#silkscreennormal') format('svg');
+  font-family: "Silkscreen Web";
+  src: url("../../public/fonts/slkscr-webfont.eot");
+  src: url("../../public/fonts/slkscr-webfont.eot?#iefix")
+      format("embedded-opentype"),
+    url("../../public/fonts/slkscr-webfont.woff") format("woff"),
+    url("../../public/fonts/slkscr-webfont.ttf") format("truetype"),
+    url("../../public/fonts/slkscr-webfont.svg#silkscreennormal") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -165,7 +166,7 @@ body {
   align-items: center;
   display: flex;
   flex-direction: column;
-  font-family: 'Silkscreen Web', monotype;
+  font-family: "Silkscreen Web", monotype;
   height: 100vh;
   justify-content: center;
   width: 100%;
@@ -179,13 +180,13 @@ h1 {
 
 h2 {
   text-align: center;
-  color: #9E91C8;
+  color: #9e91c8;
   padding-top: 20px;
   font-size: 25px;
 }
 
-.instructions {
-  text-align: center;
+p {
+  padding: 0.75em;
 }
 
 ul {
@@ -193,6 +194,6 @@ ul {
   justify-content: space-around;
 }
 
-p {
-  padding: 0.75em;
+.instructions {
+  text-align: center;
 }
