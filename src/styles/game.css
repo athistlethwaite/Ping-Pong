@@ -1,6 +1,6 @@
 /* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
+v2.0 | 20110126
+License: none (public domain)
 */
 
 html,
@@ -135,14 +135,13 @@ table {
 }
 
 /**
- * FONTS
- */
+* FONTS
+*/
 
 @font-face {
   font-family: "Silkscreen Web";
   src: url("../../public/fonts/slkscr-webfont.eot");
-  src: url("../../public/fonts/slkscr-webfont.eot?#iefix")
-      format("embedded-opentype"),
+  src: url("../../public/fonts/slkscr-webfont.eot?#iefix") format("embedded-opentype"),
     url("../../public/fonts/slkscr-webfont.woff") format("woff"),
     url("../../public/fonts/slkscr-webfont.ttf") format("truetype"),
     url("../../public/fonts/slkscr-webfont.svg#silkscreennormal") format("svg");
@@ -151,8 +150,8 @@ table {
 }
 
 /**
- * GAME
- */
+* GAME
+*/
 
 html {
   font-size: 16px;

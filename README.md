@@ -1,8 +1,10 @@
 # Pong Game
 
-This project is a basic pong game which taught me how to build SVGs from scratch, and how to implement ES2015 classes.
+This project is a basic pong game which taught me how to build SVGs from scratch, and how to implement ES2015 classes. For this project we built the board out of SVGs and compiled ES6 code into ES5 using Babel. 
 
-# Setup
+![alt_text](ping-pong.png)
+
+## Setup
 
 **Install dependencies:**
 
@@ -16,6 +18,23 @@ This project is a basic pong game which taught me how to build SVGs from scratch
 
 `> npm run build`
 
-# Takeaways
+## Keys
 
-Through 14 Challenges during the code along, I have a better understanding of ES2015 syntactical features, SVGs and Webpack to build a Pong Game. To provide a deeper understanding of the code, I believe three days would have been more beneficial. When it came to stretch goals, I had a really hard time implementing something on my own. I successfully added in the winner and two balls, but wish I had a better understanding of JavaScript to add in more functions.
+**Player 1:**
+* a: up
+* z: down
+
+**Player 2:**
+* ▲: up
+* ▼: down
+
+**Other**
+spacebar: pause
+
+# Functionality 
+
+1. Press spacebar to start the game.
+2. Upon contact with the paddles, the ball will detect where it hit the paddle and change it's vectors accordingly.
+3. The paddles have added smooth movement. The game can detect mutliple keydowns rather than just a single one.
+4. There are two balls (1 big, 1 small) to make the game harder for the two players
+5. The first player to 12, wins.
